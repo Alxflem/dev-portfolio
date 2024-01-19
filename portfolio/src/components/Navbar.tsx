@@ -1,31 +1,56 @@
 // Navbar.tsx
-import React from 'react';
+import React, { useState } from 'react';
 
 interface NavbarProps {
   name: string;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ name }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">
           <strong>{name}</strong>
         </div>
+        <div
+          className={`navbar-burger burger ${isMenuOpen ? 'is-active' : ''}`}
+          data-target="navbarMenu"
+          onClick={toggleMenu}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
 
-      <div className="navbar-end">
-        <div className="navbar-item">
-          <a href="#about">About</a>
-        </div>
-        <div className="navbar-item">
-          <a href="#experience">Experience</a>
-        </div>
-        <div className="navbar-item">
-          <a href="#work">Work</a>
-        </div>
-        <div className="navbar-item">
-          <a href="#contact">Contact</a>
+      <div id="navbarMenu" className={`navbar-menu ${isMenuOpen ? 'is-active' : ''}`}>
+        <div className="navbar-end" style={{ justifyContent: 'flex-end' }}>
+          <div className="navbar-item">
+            <a href="#about" onClick={toggleMenu}>
+              0.1 About
+            </a>
+          </div>
+          <div className="navbar-item">
+            <a href="#experience" onClick={toggleMenu}>
+              0.2 Experience
+            </a>
+          </div>
+          <div className="navbar-item">
+            <a href="#work" onClick={toggleMenu}>
+              0.3 Work
+            </a>
+          </div>
+          <div className="navbar-item">
+            <a href="#contact" onClick={toggleMenu}>
+              0.4 Contact
+            </a>
+          </div>
         </div>
       </div>
     </nav>
