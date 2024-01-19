@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ name }) => {
   };
 
   return (
-    <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">
           <strong>{name}</strong>
