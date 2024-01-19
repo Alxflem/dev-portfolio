@@ -32,22 +32,22 @@ const Navbar: React.FC<NavbarProps> = ({ name }) => {
       <div id="navbarMenu" className={`navbar-menu ${isMenuOpen ? 'is-active' : ''}`}>
         <div className="navbar-end" style={{ justifyContent: 'flex-end' }}>
           <div className="navbar-item">
-            <a href="#about" onClick={toggleMenu}>
+            <a href="#about" onClick={toggleMenu} style={{ fontSize: '0.9em' }}>
               0.1 About
             </a>
           </div>
           <div className="navbar-item">
-            <a href="#experience" onClick={toggleMenu}>
+            <a href="#experience" onClick={toggleMenu} style={{ fontSize: '0.9em' }}>
               0.2 Experience
             </a>
           </div>
           <div className="navbar-item">
-            <a href="#work" onClick={toggleMenu}>
+            <a href="#work" onClick={toggleMenu} style={{ fontSize: '0.9em' }}>
               0.3 Work
             </a>
           </div>
           <div className="navbar-item">
-            <a href="#contact" onClick={toggleMenu}>
+            <a href="#contact" onClick={toggleMenu} style={{ fontSize: '0.9em' }}>
               0.4 Contact
             </a>
           </div>
